@@ -1,0 +1,18 @@
+{
+  "name": "mini-inbox-app",
+  "version": "1.0.0",
+  "description": "Mini Inbox App - Hidden Founders",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aziz Segaoui",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "bootstrap": "~3.1.1",
+    "angular-route": "1.4.x",
+    "body-parser": "^1.7.0",
+    "express-session": "^1.7.6"
+  }
+}

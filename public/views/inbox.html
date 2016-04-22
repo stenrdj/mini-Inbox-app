@@ -1,0 +1,32 @@
+<style>
+.item:first-child{
+border-top:none;
+}	
+.item:last-child{
+	border-bottom:none;
+}	
+</style>
+<aside ng-controller="inbox" >
+	<div class="bar bar-header padding" >
+  <h1 class="title">Inbox of {{user.name}}</h1>
+</div>
+<div align="right">
+<button class="button icon ion-chatbox" ng-click="" > New message</button>
+</div>
+
+<div class="list">
+
+    <a class="item item-avatar" href="#">
+      <img src="venkman.jpg">
+      <h2>Venkman</h2>
+      <p>Back off, man. I'm a scientist.</p>
+    </a>
+
+     <a class="item item-avatar" href="#">
+      <img src="venkman.jpg">
+      <h2>Venkman</h2>
+      <p>Back off, man. I'm a scientist.</p>
+    </a>
+
+</div>
+</aside>
