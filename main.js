@@ -3,8 +3,8 @@ var path = require('path');
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 
-var FACEBOOK_APP_ID = '842598299200533';
-var FACEBOOK_APP_SECRET = '6e09ed9f62d6d4c039e8c129d95b539c';
+var FACEBOOK_APP_ID = '';
+var FACEBOOK_APP_SECRET = '';
 var express = require('express');
  var session = require('express-session');
 var bodyParser = require('body-parser')
