@@ -1,0 +1,92 @@
+<style>
+.item:first-child{
+border-top:none;
+}	
+.item:last-child{
+	border-bottom:none;
+}
+.friend{
+	display:inline-block;
+	width:100%;
+}	
+.friend img{
+	float:left;
+clear:both;
+	border-radius:50%;
+
+}
+.friend p{
+	margin-left:10px;
+	padding:2px 10px 2px 10px;
+	display: inline-block;
+	background-color:#ccc;
+	color:#fff;
+	border-radius:3px;
+	max-width: 80%;
+}
+.friend p:before{
+	content:"";
+	width: 0; 
+	height: 0; 
+		position: absolute;
+		left:35px;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent; 
+	border-right:5px solid #ccc; 
+
+}
+/* Me CSS */
+.me{
+	display:inline-block;
+	width:100%;
+}
+.me img{
+ float:right;
+	clear:both;
+	border-radius:50%;
+}
+.me p{
+
+	margin-right:10px;
+	padding:2px 10px 2px 10px;
+	display: block;
+	background-color:#bdc3c7;
+	color:#2c3e50;
+	border-radius:3px;
+	 float:right;
+	 max-width: 80%;
+}
+.me p:before{
+	content:"";
+	width: 0; 
+	height: 0; 
+		position: absolute;
+		right:35px;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent; 
+	border-left:5px solid #bdc3c7; 
+
+}
+</style>
+<aside ng-controller="inboxConv" >
+	<div class="bar bar-header padding" >
+<a class="button icon-left ion-chevron-left button-clear button-dark" href="#/inbox">Back</a>
+
+  <h1 class="title">{{user.to.data[0].id==userid? user.to.data[1].name : user.to.data[0].name}}</h1>
+</div>
+
+
+<div class="list">
+<div ng-repeat="m in user.comments.data">
+
+<div class="friend" ng-if="m.from.id!=userid">
+<img src="http://graph.facebook.com/{{m.from.id}}/picture" width="30px" height="30px"><p >{{m.message}}</p>
+</div>
+    
+<div class="me" ng-if="m.from.id==userid">
+<img src="http://graph.facebook.com/{{m.from.id}}/picture" width="30px" height="30px" ><p>{{m.message}}</p>
+</div>
+
+</div>
+</div>
+</aside>

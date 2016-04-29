@@ -1,1 +1,64 @@
-<h1>Content {{item}} </h1>
+<style>
+#friendsListe:hover,#userName:active,#userName:hover ~ #friendsListe{
+ visibility:visible;
+}
+
+#friendsListe{
+	width:100%;
+	display:block;
+	position:absolute;
+	top:45px;
+	right:0px;
+	z-index:99999;
+
+	visibility:hidden;
+	}
+#friendsListe ul li{
+	background:#fff !important;
+
+}
+#friendsListe li a{
+color:#000 !important;
+}
+	#friendsListe li img{
+	padding:3px 0px 0px 3px;
+	 width:30px;
+	 border-radius:50%;
+	}
+	#friendsListe li span{
+		position:relative;
+		top:-10px;
+		margin-left:5px;
+	text-align:justify;
+		display:inline-block;
+
+	}
+	.nameclick{
+		
+		background:#2b87c3;
+		padding:2px 5px 2px 5px;
+		color:#fff;
+		border-radius:10px;
+	}
+	.nameclick:lastchild{
+		margin-right:10px;
+	}
+</style>
+<div ng-controller="newMessage">
+	
+<div class="list list-inset"  >
+  <label class="item item-input" id="userName">
+    <i class="icon ion-person-add placeholder-icon"></i>
+  <div  ng-bind-html="renderHtml(added)"></div><input  type="text" placeholder="Type a name" ng-model="query">
+  </label>
+    <label class="item item-input" id="friendsListe">
+   <ul  ng-repeat="friend in friends | filter:query | limitTo:3 ">
+      <li ><a href="#" ng-click="add(friend.name)"><img src="{{friend.picture.data.url}}"/><span>{{friend.name}}</span></a></li>
+    </ul>
+    </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Your message here">
+  </label>
+</div>
+
+</div>
