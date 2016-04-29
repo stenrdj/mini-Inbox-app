@@ -69,6 +69,7 @@ $scope.added="";
                            $scope.friends=response;
 
         });
+     // this function asking angular to integer HTML code in DOM as is it and not read it as string.
      $scope.renderHtml = function (htmlCode) {
             return $sce.trustAsHtml(htmlCode);
         };
